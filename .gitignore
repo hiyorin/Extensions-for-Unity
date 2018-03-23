@@ -31,4 +31,10 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
+# *.unitypackage
+
+# Extensions
+*/UniRx/
+UniRx.meta
+*/DOTween/
+DOTween.meta
