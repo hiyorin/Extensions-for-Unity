@@ -34,7 +34,7 @@ sysinfo.txt
 # *.unitypackage
 
 # Extensions
-*/UniRx/
-UniRx.meta
-*/DOTween/
-DOTween.meta
+Assets/UniRx/
+Assets/UniRx.meta
+Assets/DOTween/
+Assets/DOTween.meta
