@@ -1,4 +1,5 @@
 ﻿#if EXTENSIONS_DOTWEEN && EXTENSIONS_UNIRX
+using System;
 using UnityEngine;
 using DG.Tweening;
 using UniRx;
