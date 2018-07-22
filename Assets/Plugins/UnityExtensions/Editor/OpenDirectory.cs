@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Diagnostics;
 
-namespace Extensions.Editor
+namespace UnityExtensions.Editor
 {
     public static class OpenDirectory
     {

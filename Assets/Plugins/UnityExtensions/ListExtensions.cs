@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Extensions
+namespace UnityExtensions
 {
     /// <summary>
     /// List extensions.

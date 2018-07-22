@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Extensions
+namespace UnityExtensions
 {
     /// <summary>
     /// MonoBehaviour extensions.

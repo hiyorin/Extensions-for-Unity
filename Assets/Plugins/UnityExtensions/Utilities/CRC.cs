@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public class CRC : HashAlgorithm
     {

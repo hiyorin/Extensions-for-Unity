@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static class SystemUtility
     {

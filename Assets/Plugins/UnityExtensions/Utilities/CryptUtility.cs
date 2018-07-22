@@ -1,12 +1,9 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
-using System.Collections;
 using System.Security.Cryptography;
-using UniRx;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static partial class CryptUtility
     {

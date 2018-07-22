@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Extensions
+namespace UnityExtensions
 {
     /// <summary>
     /// Array extensions.

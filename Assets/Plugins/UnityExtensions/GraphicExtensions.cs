@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static class GraphicExtensions
     {

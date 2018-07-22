@@ -1,23 +1,23 @@
 ﻿using UnityEditor;
 
-namespace Extensions.Editor
+namespace UnityExtensions.Editor
 {
-    public static class DOTweenMenu
+    public static class UniRxMenu
     {
-        private const string EnableItemName     = "Extensions/DOTween/Enable";
-        private const string DisableItemName    = "Extensions/DOTween/Disable";
-        private const string Symbol             = "EXTENSIONS_DOTWEEN";
+        private const string EnableItemName     = "Extensions/UniRx/Enable";
+        private const string DisableItemName    = "Extensions/UniRx/Disable";
+        private const string Symbol             = "EXTENSIONS_UNIRX";
 
         [MenuItem(EnableItemName)]
-        private static void EnableDOTween()
+        private static void Enable()
         {
             MenuEditor.AddSymbols(Symbol);
         }
 
         [MenuItem(EnableItemName, true)]
-        private static bool EnableDOTweenalidate()
+        private static bool EnableValidate()
         {
-#if EXTENSIONS_DOTWEEN
+#if EXTENSIONS_UNIRX
             Menu.SetChecked(EnableItemName, true);
             return false;
 #else
@@ -27,15 +27,15 @@ namespace Extensions.Editor
         }
 
         [MenuItem(DisableItemName)]
-        private static void DisableDOTween()
+        private static void Disable()
         {
             MenuEditor.RemoveSymbols(Symbol);
         }
 
         [MenuItem(DisableItemName, true)]
-        private static bool DisableDOTweenValidate()
+        private static bool DisableValidate()
         {
-#if EXTENSIONS_DOTWEEN
+#if EXTENSIONS_UNIRX
             Menu.SetChecked(DisableItemName, false);
             return true;
 #else

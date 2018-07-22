@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Extensions
+namespace UnityExtensions
 {
     /// <summary>
     /// String extensions.

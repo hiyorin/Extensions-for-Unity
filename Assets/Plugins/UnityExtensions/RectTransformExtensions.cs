@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Extensions
+namespace UnityExtensions
 {
     /// <summary>
     /// RectTransform extensions.

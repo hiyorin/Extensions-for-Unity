@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Collections;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static partial class FileUtility
     {

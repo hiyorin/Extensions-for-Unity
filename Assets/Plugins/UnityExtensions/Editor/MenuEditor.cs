@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Extensions.Editor
+namespace UnityExtensions.Editor
 {
     public static class MenuEditor
     {
