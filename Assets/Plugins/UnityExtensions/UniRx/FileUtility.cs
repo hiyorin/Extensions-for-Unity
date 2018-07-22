@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections;
 using UniRx;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static partial class FileUtility
     {

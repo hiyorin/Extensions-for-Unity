@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using UniRx;
 
-namespace Extensions
+namespace UnityExtensions
 {
     [Serializable]
     public class RectTransformReactiveProperty : ReactiveProperty<RectTransform>

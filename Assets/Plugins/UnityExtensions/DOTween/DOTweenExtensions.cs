@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UniRx;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static class DOTweenExtensions
     {

@@ -2,7 +2,7 @@
 using System;
 using UniRx;
 
-namespace Extensions
+namespace UnityExtensions
 {
     public static partial class CryptUtility
     {
