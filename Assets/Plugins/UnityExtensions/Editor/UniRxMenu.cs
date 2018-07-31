@@ -9,7 +9,7 @@ namespace UnityExtensions.Editor
         private const string Symbol             = "EXTENSIONS_UNIRX";
 
         [MenuItem(EnableItemName)]
-        private static void Enable()
+        public static void Enable()
         {
             MenuEditor.AddSymbols(Symbol);
         }
@@ -27,7 +27,7 @@ namespace UnityExtensions.Editor
         }
 
         [MenuItem(DisableItemName)]
-        private static void Disable()
+        public static void Disable()
         {
             MenuEditor.RemoveSymbols(Symbol);
         }

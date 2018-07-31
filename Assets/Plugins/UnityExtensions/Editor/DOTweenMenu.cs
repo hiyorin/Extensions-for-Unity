@@ -9,13 +9,13 @@ namespace UnityExtensions.Editor
         private const string Symbol             = "EXTENSIONS_DOTWEEN";
 
         [MenuItem(EnableItemName)]
-        private static void EnableDOTween()
+        public static void Enable()
         {
             MenuEditor.AddSymbols(Symbol);
         }
 
         [MenuItem(EnableItemName, true)]
-        private static bool EnableDOTweenalidate()
+        private static bool EnableValidate()
         {
 #if EXTENSIONS_DOTWEEN
             Menu.SetChecked(EnableItemName, true);
@@ -27,13 +27,13 @@ namespace UnityExtensions.Editor
         }
 
         [MenuItem(DisableItemName)]
-        private static void DisableDOTween()
+        public static void Disable()
         {
             MenuEditor.RemoveSymbols(Symbol);
         }
 
         [MenuItem(DisableItemName, true)]
-        private static bool DisableDOTweenValidate()
+        private static bool DisableValidate()
         {
 #if EXTENSIONS_DOTWEEN
             Menu.SetChecked(DisableItemName, false);
