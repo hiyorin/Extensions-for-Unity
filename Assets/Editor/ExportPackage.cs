@@ -14,8 +14,8 @@ public class ExportPackage
     [MenuItem("Assets/Export UnityExtensions")]
     private static void Export()
     {
-        string readmePath = Path.Combine(Application.dataPath, "Plugins/SocialGameTemplete", ReadMe);
-        string licensePath = Path.Combine(Application.dataPath, "Plugins/SocialGameTemplete", License);
+        string readmePath = Path.Combine(Application.dataPath, "Plugins/UnityExtensions", ReadMe);
+        string licensePath = Path.Combine(Application.dataPath, "Plugins/UnityExtensions", License);
         File.Copy(Path.Combine(Application.dataPath, "..", ReadMe), readmePath);
         File.Copy(Path.Combine(Application.dataPath, "..", License), licensePath);
         AssetDatabase.Refresh();
