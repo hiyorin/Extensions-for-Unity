@@ -31,7 +31,7 @@ sysinfo.txt
 
 # Builds
 *.apk
-# *.unitypackage
+*.unitypackage
 
 # Extensions
 Assets/Plugins/UniRx/

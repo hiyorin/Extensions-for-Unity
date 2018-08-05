@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEditor;
 
 public class ExportPackage
@@ -7,10 +8,23 @@ public class ExportPackage
         "Assets/Plugins/UnityExtensions",
     };
 
+    private const string ReadMe = "README.md";
+    private const string License = "LICENSE";
+
     [MenuItem("Assets/Export UnityExtensions")]
     private static void Export()
     {
+        string readmePath = Path.Combine(Application.dataPath, "Plugins/SocialGameTemplete", ReadMe);
+        string licensePath = Path.Combine(Application.dataPath, "Plugins/SocialGameTemplete", License);
+        File.Copy(Path.Combine(Application.dataPath, "..", ReadMe), readmePath);
+        File.Copy(Path.Combine(Application.dataPath, "..", License), licensePath);
+        AssetDatabase.Refresh();
+
         AssetDatabase.ExportPackage(Paths, "ExtensionMethod-for-Unity.unitypackage", ExportPackageOptions.Recurse);
         Debug.Log("Export complete!");
+
+        File.Delete(readmePath);
+        File.Delete(licensePath);
+        AssetDatabase.Refresh();
     }
 }
