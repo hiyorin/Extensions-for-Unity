@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 #if EXTENSIONS_UNIRX
 using UniRx;
@@ -25,14 +26,28 @@ namespace UnityExtensions
 #if EXTENSIONS_DOTWEEN
         public static void FadeIn(this AudioSource self, float volume, float duration)
         {
-            self.DOFade(volume, duration);
+            if (volume < 0.0f) volume = 0.0f;
+            else if (volume > 1.0f) volume = 1.0f;
+            DOTween.To(() => self.volume, x => self.volume = x, volume, duration).SetTarget(self);
         }
-
+    
+        public static IEnumerator FadeInAsCoroutine(this AudioSource self, float volume, float duration)
+        {
+            self.FadeIn(volume, duration);
+            yield return new WaitForSeconds(duration);
+        }
+    
         public static void FadeOut(this AudioSource self, float duration)
         {
-            self.DOFade(0.0f, duration);
+            DOTween.To(() => self.volume, x => self.volume = x, 0.0f, duration).SetTarget(self);
         }
 
+        public static IEnumerator FadeOutAsCoroutine(this AudioSource self, float duration)
+        {
+            self.FadeOut(duration);
+            yield return new WaitForSeconds(duration);
+        }
+    
         public static bool PlayWithFadeIn(this AudioSource self, AudioClip clip, float volume, float duration)
         {
             if (clip == null || volume <= 0.0f)
