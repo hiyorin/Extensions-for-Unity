@@ -27,6 +27,27 @@ namespace UnityExtensions
             }
         }
 
+        public static IEnumerator LoadStreamingAssets(string path, Action<byte[]> result)
+        {
+            string fullPath = Path.Combine(Application.streamingAssetsPath + path);
+
+            #if UNITY_ANDROID && !UNITY_EDITOR
+            using (var www = new WWW(fullPath))
+            {
+                yield return www;
+                if (string.IsNullOrEmpty(www.error))
+                {
+                    throw new Exception(www.error);
+                }
+
+                SystemUtility.SafeCall(result, www.bytes);
+            }
+            #else
+            SystemUtility.SafeCall(result, File.ReadAllBytes(fullPath));
+            yield break;
+            #endif
+        }
+        
         public static bool Exists(string path)
         {
             return File.Exists(GetFullPath(path));

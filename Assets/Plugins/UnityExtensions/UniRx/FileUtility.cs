@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Collections;
 using UniRx;
+using UnityEngine;
 
 namespace UnityExtensions
 {
@@ -68,6 +69,16 @@ namespace UnityExtensions
             {
                 throw exception;
             }
+        }
+
+        public static IObservable<byte[]> LoadStreamingAssetsObservable(string path)
+        {
+            string fullPath = Path.Combine(Application.streamingAssetsPath, path);
+            #if UNITY_ANDROID && !UNITY_EDITOR
+            return ObservableWWW.GetAndGetBytes(fullPath);
+            #else
+            return LoadAsyncAllBytesAsObservable(fullPath);
+            #endif
         }
     }
 }
