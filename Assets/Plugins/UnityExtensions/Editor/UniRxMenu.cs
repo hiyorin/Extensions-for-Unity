@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace UnityExtensions.Editor
 {
-    internal static class UniRxMenu
+    public static class UniRxMenu
     {
         private const string EnableItemName     = "Extensions/UniRx/Enable";
         private const string DisableItemName    = "Extensions/UniRx/Disable";

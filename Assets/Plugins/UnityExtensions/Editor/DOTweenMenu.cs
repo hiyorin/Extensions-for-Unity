@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace UnityExtensions.Editor
 {
-    internal static class DOTweenMenu
+    public static class DOTweenMenu
     {
         private const string EnableItemName     = "Extensions/DOTween/Enable";
         private const string DisableItemName    = "Extensions/DOTween/Disable";
