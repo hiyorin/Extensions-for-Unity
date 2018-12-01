@@ -1,8 +1,9 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
 namespace UnityExtensions.Editor
 {
-    public static class DOTweenMenu
+    internal static class DOTweenMenu
     {
         private const string EnableItemName     = "Extensions/DOTween/Enable";
         private const string DisableItemName    = "Extensions/DOTween/Disable";
@@ -17,6 +18,9 @@ namespace UnityExtensions.Editor
         [MenuItem(EnableItemName, true)]
         private static bool EnableValidate()
         {
+            if (EditorApplication.isCompiling)
+                return false;
+            
 #if EXTENSIONS_DOTWEEN
             Menu.SetChecked(EnableItemName, true);
             return false;
@@ -35,6 +39,9 @@ namespace UnityExtensions.Editor
         [MenuItem(DisableItemName, true)]
         private static bool DisableValidate()
         {
+            if (EditorApplication.isCompiling)
+                return false;
+            
 #if EXTENSIONS_DOTWEEN
             Menu.SetChecked(DisableItemName, false);
             return true;
@@ -45,3 +52,4 @@ namespace UnityExtensions.Editor
         }
     }
 }
+#endif

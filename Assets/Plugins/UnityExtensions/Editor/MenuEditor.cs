@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -27,3 +28,4 @@ namespace UnityExtensions.Editor
         }
     }
 }
+#endif

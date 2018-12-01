@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 using System.Diagnostics;
 
 namespace UnityExtensions.Editor
 {
-    public static class OpenDirectory
+    internal static class OpenDirectory
     {
         [MenuItem("OpenDir/DataPath")]
         private static void OpenDataPath()
@@ -43,3 +44,4 @@ namespace UnityExtensions.Editor
         }
     }
 }
+#endif
