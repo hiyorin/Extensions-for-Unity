@@ -27,6 +27,11 @@ namespace UnityExtensions
             }
         }
 
+        public static void Delete(string path)
+        {
+            File.Delete(Path.Combine(PersistentDataPath, path));
+        }
+
         public static IEnumerator LoadStreamingAssets(string path, Action<byte[]> result)
         {
             string fullPath = Path.Combine(Application.streamingAssetsPath + path);
