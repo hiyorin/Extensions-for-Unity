@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using UniRx;
+using UniRx.Async;
 
 namespace UnityExtensions
 {
@@ -19,6 +20,15 @@ namespace UnityExtensions
                 x => x.Invoke,
                 x => self.onComplete += x,
                 x => self.onComplete -= x);
+        }
+
+        public static async UniTask OnCompleteAsUniTask(this Tween self)
+        {
+            await Observable.FromEvent<TweenCallback>(
+                    x => x.Invoke,
+                    x => self.onComplete += x,
+                    x => self.onComplete -= x)
+                .First();
         }
 
         public static IObservable<Unit> OnPlayAsObservable(this Tween self)
