@@ -1,3 +1,3 @@
-[submodule "Assets"]
-    path = Assets
-    url = git@github.com:hiyorin/upm.Extensions-for-Unity
+[submodule "Assets/Plugins/UnityExtensions"]
+	path = Assets/Plugins/UnityExtensions
+	url = https://github.com/hiyorin/upm.Extensions-for-Unity.git
