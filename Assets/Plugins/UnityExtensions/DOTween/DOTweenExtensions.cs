@@ -22,6 +22,7 @@ namespace UnityExtensions
                 x => self.onComplete -= x);
         }
 
+        #if UNITY_2018_3_OR_NEWER
         public static async UniTask OnCompleteAsUniTask(this Tween self)
         {
             await Observable.FromEvent<TweenCallback>(
@@ -30,7 +31,8 @@ namespace UnityExtensions
                     x => self.onComplete -= x)
                 .First();
         }
-
+        #endif
+        
         public static IObservable<Unit> OnPlayAsObservable(this Tween self)
         {
             return Observable.FromEvent<TweenCallback>(
