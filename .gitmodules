@@ -4,3 +4,6 @@
 [submodule "Assets/Plugins/UnityExtensions.UniRx"]
 	path = Assets/Plugins/UnityExtensions.UniRx
 	url = https://github.com/hiyorin/upm.Extensions-for-Unity.UniRx.git
+[submodule "Assets/Plugins/UnityExtensions.DOTween"]
+	path = Assets/Plugins/UnityExtensions.DOTween
+	url = https://github.com/hiyorin/upm.Extensions-for-Unity.DOTween.git
