@@ -15,6 +15,8 @@ Specify repository URL git://github.com/hiyorin/upm.Extension-for-Unity.git with
     // ...
   }
 }
+```
+
 
 # Usage
 ```cs
