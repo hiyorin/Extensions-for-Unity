@@ -1,30 +1,39 @@
-﻿using System.IO;
-using UnityEngine;
-using UnityEditor;
+﻿using UnityEditor;
 
 public class ExportPackage
 {
-    private readonly static string[] Paths = {
-        "Assets/Plugins/UnityExtensions",
-    };
-
-    private const string ReadMe = "README.md";
-    private const string License = "LICENSE";
-
-    [MenuItem("Assets/Export UnityExtensions")]
+    [MenuItem("Assets/Export/UnityExtensions")]
     private static void Export()
     {
-        string readmePath = Path.Combine(Application.dataPath, "Plugins/UnityExtensions", ReadMe);
-        string licensePath = Path.Combine(Application.dataPath, "Plugins/UnityExtensions", License);
-        File.Copy(Path.Combine(Application.dataPath, "..", ReadMe), readmePath);
-        File.Copy(Path.Combine(Application.dataPath, "..", License), licensePath);
-        AssetDatabase.Refresh();
+        AssetDatabase.ExportPackage(
+            "Assets/Plugins/UnityExtensions",
+            "Extensions-for-Unity.unitypackage",
+            ExportPackageOptions.Recurse);
+    }
 
-        AssetDatabase.ExportPackage(Paths, "ExtensionMethod-for-Unity.unitypackage", ExportPackageOptions.Recurse);
-        Debug.Log("Export complete!");
+    [MenuItem("Assets/Export/UnityExtensions.UniRx")]
+    private static void ExportUniRx()
+    {
+        AssetDatabase.ExportPackage(
+            "Assets/Plugins/UnityExtensions.UniRx",
+            "Extensions-for-Unity.UniRx.unitypackage",
+            ExportPackageOptions.Recurse);
+    }
 
-        File.Delete(readmePath);
-        File.Delete(licensePath);
-        AssetDatabase.Refresh();
+    [MenuItem("Assets/Export/UnityExtensions.DOTween")]
+    private static void ExportDoTween()
+    {
+        AssetDatabase.ExportPackage(
+            "Assets/Plugins/UnityExtensions.DOTween",
+            "Extensions-for-Unity.DOTween.unitypackage",
+            ExportPackageOptions.Recurse);
+    }
+
+    [MenuItem("Assets/Export/All")]
+    private static void ExportAll()
+    {
+        Export();
+        ExportUniRx();
+        ExportDoTween();
     }
 }
