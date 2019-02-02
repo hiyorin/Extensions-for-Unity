@@ -8,7 +8,7 @@ C# Extension Method for Unity
 * Extensions-for-Unity.DOTween.unitypackage
 
 ## package manager
-Specify repository URL git://github.com/hiyorin/upm.Extension-for-Unity.git with key com.hiyorin.extensions into Packages/manifest.json like below.
+Specify repository URL git://github.com/hiyorin/upm.Extensions-for-Unity.git with key com.hiyorin.extensions into Packages/manifest.json like below.
 ```javascript
 {
   "dependencies": {
