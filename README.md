@@ -3,9 +3,9 @@ C# Extension Method for Unity
 
 # Install
 ## unitypackage
-Extensions-for-Unity.unitypackage
-Extensions-for-Unity.UniRx.unitypackage
-Extensions-for-Unity.DOTween.unitypackage
+Extensions-for-Unity.unitypackage  
+Extensions-for-Unity.UniRx.unitypackage  
+Extensions-for-Unity.DOTween.unitypackage  
 
 ## package manager
 Specify repository URL git://github.com/hiyorin/upm.Extension-for-Unity.git with key com.hiyorin.extensions into Packages/manifest.json like below.
